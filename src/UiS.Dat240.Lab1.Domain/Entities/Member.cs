@@ -29,7 +29,21 @@ public class Member
         // - email must contain '@' character
         // Initial status should be Active
         // Initial outstanding fines should be 0
-        throw new NotImplementedException();
+        
+        if (string.IsNullOrEmpty(memberId))
+            throw new ArgumentException("MemberId must not be null or empty");
+        if (string.IsNullOrEmpty(name))
+            throw new ArgumentException("Name must not be null or empty");
+        if (string.IsNullOrEmpty(email))
+            throw new ArgumentException("Email must not be null or empty");
+        if (!email.Contains("@"))
+            throw new ArgumentException("Email must contain '@' character");
+
+        MemberId = memberId;
+        Name = name;
+        Email = email;
+        Status = MemberStatus.Active;
+        OutstandingFines = 0;
     }
 
     /// <summary>
@@ -43,7 +57,13 @@ public class Member
         // - Status is Active
         // - Has fewer than MaxActiveLoans (5) active loans
         // - Outstanding fines are less than MaxFinesBeforeSuspension ($10)
-        throw new NotImplementedException();
+        if (Status != MemberStatus.Active)
+            return false;
+        if (_activeLoans.Count >= MaxActiveLoans)
+            return false;
+        if (OutstandingFines >= MaxFinesBeforeSuspension)
+            return false;
+        return true;
     }
 
     /// <summary>
@@ -58,7 +78,10 @@ public class Member
         // 2. Call book.Borrow(this.MemberId)
         // 3. Create a new Loan with a unique loan ID (you can use Guid.NewGuid().ToString())
         // 4. Add the loan to _activeLoans
-        throw new NotImplementedException();
+        if (!CanBorrow())
+            throw new InvalidOperationException("Member cannot borrow at this time.");
+        book.Borrow(this.MemberId);
+        _activeLoans.Add(new Loan(Guid.NewGuid().ToString(), this.MemberId, book, DateTime.Now));
     }
 
     /// <summary>
@@ -72,7 +95,11 @@ public class Member
         // 2. Calculate any fines using loan.CalculateFine()
         // 3. If there are fines, add them using AddFine()
         // 4. Remove the loan from _activeLoans
-        throw new NotImplementedException();
+        loan.Return(DateTime.Now);
+        decimal fine = loan.CalculateFine();
+        if (fine > 0)
+            AddFine(fine);
+        _activeLoans.Remove(loan);
     }
 
     /// <summary>
@@ -84,7 +111,9 @@ public class Member
         // TODO: Implement
         // 1. Add amount to OutstandingFines
         // 2. If OutstandingFines >= MaxFinesBeforeSuspension, automatically Suspend()
-        throw new NotImplementedException();
+        OutstandingFines += amount;
+        if (OutstandingFines >= MaxFinesBeforeSuspension)
+            Suspend();
     }
 
     /// <summary>
@@ -98,7 +127,13 @@ public class Member
         // 1. Validate amount is positive and doesn't exceed OutstandingFines
         // 2. Subtract amount from OutstandingFines
         // 3. If member was suspended and fines drop below $10, consider auto-activating (optional)
-        throw new NotImplementedException();
+        if (amount < 0)
+            throw new ArgumentException("Amount must be positive");
+        if (amount > OutstandingFines)
+            throw new ArgumentException("Amount exceeds outstanding fines");
+        OutstandingFines -= amount;
+        if (Status == MemberStatus.Suspended && OutstandingFines < MaxFinesBeforeSuspension)
+            Activate();
     }
 
     /// <summary>
@@ -108,7 +143,7 @@ public class Member
     {
         // TODO: Implement
         // Change Status to Suspended
-        throw new NotImplementedException();
+        Status = MemberStatus.Suspended;
     }
 
     /// <summary>
@@ -118,7 +153,7 @@ public class Member
     {
         // TODO: Implement
         // Change Status to Active
-        throw new NotImplementedException();
+        Status = MemberStatus.Active;
     }
 
     /// <summary>
@@ -128,7 +163,7 @@ public class Member
     {
         // TODO: Implement
         // Change Status to Expired
-        throw new NotImplementedException();
+        Status = MemberStatus.Expired;
     }
 }
 

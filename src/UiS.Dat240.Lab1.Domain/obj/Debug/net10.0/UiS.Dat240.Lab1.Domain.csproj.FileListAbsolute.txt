@@ -10,3 +10,15 @@
 /Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/obj/Debug/net10.0/refint/UiS.Dat240.Lab1.Domain.dll
 /Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/obj/Debug/net10.0/UiS.Dat240.Lab1.Domain.pdb
 /Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/obj/Debug/net10.0/ref/UiS.Dat240.Lab1.Domain.dll
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\bin\Debug\net10.0\UiS.Dat240.Lab1.Domain.deps.json
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\bin\Debug\net10.0\UiS.Dat240.Lab1.Domain.dll
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\bin\Debug\net10.0\UiS.Dat240.Lab1.Domain.pdb
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\obj\Debug\net10.0\UiS.Dat240.Lab1.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\obj\Debug\net10.0\UiS.Dat240.Lab1.Domain.AssemblyInfoInputs.cache
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\obj\Debug\net10.0\UiS.Dat240.Lab1.Domain.AssemblyInfo.cs
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\obj\Debug\net10.0\UiS.Dat240.Lab1.Domain.csproj.CoreCompileInputs.cache
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\obj\Debug\net10.0\UiS.Dat240.Lab1.Domain.sourcelink.json
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\obj\Debug\net10.0\UiS.Dat240.Lab1.Domain.dll
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\obj\Debug\net10.0\refint\UiS.Dat240.Lab1.Domain.dll
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\obj\Debug\net10.0\UiS.Dat240.Lab1.Domain.pdb
+C:\Users\narte\OneDrive - Universitetet i Stavanger\InnleveringerOgOppgaver\DAT250\Lab1_AK\src\UiS.Dat240.Lab1.Domain\obj\Debug\net10.0\ref\UiS.Dat240.Lab1.Domain.dll

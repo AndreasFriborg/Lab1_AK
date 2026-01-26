@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Console/UiS.Dat240.Lab1.Console.csproj": {}
+    "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Console\\UiS.Dat240.Lab1.Console.csproj": {}
   },
   "projects": {
-    "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Console/UiS.Dat240.Lab1.Console.csproj": {
+    "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Console\\UiS.Dat240.Lab1.Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Console/UiS.Dat240.Lab1.Console.csproj",
+        "projectUniqueName": "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Console\\UiS.Dat240.Lab1.Console.csproj",
         "projectName": "UiS.Dat240.Lab1.Console",
-        "projectPath": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Console/UiS.Dat240.Lab1.Console.csproj",
-        "packagesPath": "/Users/andreas/.nuget/packages/",
-        "outputPath": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Console/obj/",
+        "projectPath": "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Console\\UiS.Dat240.Lab1.Console.csproj",
+        "packagesPath": "C:\\Users\\narte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Console\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/andreas/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\narte\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -26,8 +26,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/UiS.Dat240.Lab1.Domain.csproj": {
-                "projectPath": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/UiS.Dat240.Lab1.Domain.csproj"
+              "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Domain\\UiS.Dat240.Lab1.Domain.csproj": {
+                "projectPath": "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Domain\\UiS.Dat240.Lab1.Domain.csproj"
               }
             }
           }
@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -341,17 +341,17 @@
         }
       }
     },
-    "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/UiS.Dat240.Lab1.Domain.csproj": {
+    "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Domain\\UiS.Dat240.Lab1.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/UiS.Dat240.Lab1.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Domain\\UiS.Dat240.Lab1.Domain.csproj",
         "projectName": "UiS.Dat240.Lab1.Domain",
-        "projectPath": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/UiS.Dat240.Lab1.Domain.csproj",
-        "packagesPath": "/Users/andreas/.nuget/packages/",
-        "outputPath": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/obj/",
+        "projectPath": "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Domain\\UiS.Dat240.Lab1.Domain.csproj",
+        "packagesPath": "C:\\Users\\narte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\narte\\OneDrive - Universitetet i Stavanger\\InnleveringerOgOppgaver\\DAT250\\Lab1_AK\\src\\UiS.Dat240.Lab1.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/andreas/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\narte\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -396,7 +396,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

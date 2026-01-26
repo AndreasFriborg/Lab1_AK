@@ -1,3 +1,6 @@
+using System.Diagnostics.Tracing;
+using System.Net;
+
 namespace UiS.Dat240.Lab1.Domain.Entities;
 
 public class Book
@@ -19,7 +22,18 @@ public class Book
     {
         // TODO: Validate parameters and initialize properties
         // Initial status should be Available
-        throw new NotImplementedException();
+        if (string.IsNullOrEmpty(isbn))
+            throw new ArgumentException("ISBN can't be null or empty.");
+        if (string.IsNullOrEmpty(title))
+            throw new ArgumentException("Title can't be null or empty.");
+        if (string.IsNullOrEmpty(author))
+            throw new ArgumentException("Author can't be null or empty.");
+
+        ISBN = isbn;
+        Title = title;
+        Author = author;
+        Status = BookStatus.Available;
+        ReservedForMemberId = null;
     }
 
     /// <summary>
@@ -32,7 +46,13 @@ public class Book
         // TODO: Implement borrowing logic
         // Can only borrow if status is Available
         // Change status to Borrowed
-        throw new NotImplementedException();
+
+        if (Status != BookStatus.Available)
+            throw new InvalidOperationException("Book is not available");   
+
+        Status = BookStatus.Borrowed;
+        ReservedForMemberId = memberId;
+
     }
 
     /// <summary>
@@ -44,7 +64,10 @@ public class Book
         // TODO: Implement return logic
         // If ReservedForMemberId is set, status becomes Reserved
         // Otherwise, status becomes Available and ReservedForMemberId is cleared
-        throw new NotImplementedException();
+        if (Status != BookStatus.Reserved)
+            Status = BookStatus.Available;
+            ReservedForMemberId = null;
+
     }
 
     /// <summary>
@@ -57,7 +80,13 @@ public class Book
         // TODO: Implement reservation logic
         // Can only reserve if status is Borrowed (not Available or already Reserved)
         // Set ReservedForMemberId and change status to Reserved
-        throw new NotImplementedException();
+        if (Status != BookStatus.Borrowed)
+            throw new InvalidOperationException("Book already available or reserved.");
+
+        ReservedForMemberId = memberId;
+        Status = BookStatus.Reserved;
+
+
     }
 
     /// <summary>
@@ -79,7 +108,9 @@ public class Book
     {
         // TODO: Implement
         // Only Available books can be borrowed
-        throw new NotImplementedException();
+        if (Status != BookStatus.Available)
+            return false;
+        return true;
     }
 
     /// <summary>

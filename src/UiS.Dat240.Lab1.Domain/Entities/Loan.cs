@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace UiS.Dat240.Lab1.Domain.Entities;
@@ -68,8 +69,14 @@ public class Loan
         if (DateTime.Now < DueDate || IsReturned == true)
             return 0;
 
-        if (DateTime.Now > ReturnDate)
+        if (GetDaysOverdue() <= 7)
+            return GetDaysOverdue() * 5;
+        if (GetDaysOverdue() > 7 && GetDaysOverdue() <= 14)
+            return 7*5 + (GetDaysOverdue()-7) * 10;
+        if (GetDaysOverdue() > 14)
+            return 7*10 + 7*5 + (GetDaysOverdue()-14) * 20;
             
+        throw new InvalidOperationException("Invalid inputs.");
 
     }
 
@@ -84,8 +91,17 @@ public class Loan
         // 1. Check if already returned - throw InvalidOperationException if so
         // 2. Set ReturnDate to the provided date
         // 3. Validate returnDate is not before BorrowDate
-        throw new NotImplementedException();
+
+        if (IsReturned == true)
+            throw new InvalidOperationException("Book has already been returned.");
+
+        ReturnDate = returnDate;
+
+        if (returnDate < BorrowDate)
+            throw new InvalidOperationException("Date returned must be after date borrowed.");
+        
     }
+
 
     /// <summary>
     /// Gets the number of days this loan is overdue.
@@ -96,6 +112,11 @@ public class Loan
         // TODO: Implement
         // Return 0 if not overdue or already returned
         // Otherwise return (DateTime.Now - DueDate).Days
-        throw new NotImplementedException();
+
+        if (DateTime.Now <= ReturnDate)
+            return 0;
+
+        return (DateTime.Now - DueDate).Days;
+
     }
 }

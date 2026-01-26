@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/UiS.Dat240.Lab1.Domain.csproj",
+      "projectUniqueName": "/Users/andreas/Documents/GitHub/DAT240_labs/Lab1/src/UiS.Dat240.Lab1.Domain/UiS.Dat240.Lab1.Domain.csproj",
       "projectName": "UiS.Dat240.Lab1.Domain",
-      "projectPath": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/UiS.Dat240.Lab1.Domain.csproj",
+      "projectPath": "/Users/andreas/Documents/GitHub/DAT240_labs/Lab1/src/UiS.Dat240.Lab1.Domain/UiS.Dat240.Lab1.Domain.csproj",
       "packagesPath": "/Users/andreas/.nuget/packages/",
-      "outputPath": "/Users/andreas/Documents/GitHub/DAT240_labs/assignments/Lab1/src/UiS.Dat240.Lab1.Domain/obj/",
+      "outputPath": "/Users/andreas/Documents/GitHub/DAT240_labs/Lab1/src/UiS.Dat240.Lab1.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/andreas/.nuget/NuGet/NuGet.Config"

@@ -35,7 +35,15 @@ public class Loan
         // TODO: Validate and initialize
         // DueDate should be BorrowDate + LoanPeriodDays (14 days)
         // ReturnDate should be null initially
-        throw new NotImplementedException();
+        ReturnDate = null;
+        
+        DueDate = borrowDate.AddDays(LoanPeriodDays);
+
+        LoanId = loanId;
+        MemberId = memberId;
+        Book = book;
+        BorrowDate = borrowDate;
+
     }
 
     /// <summary>
@@ -56,7 +64,13 @@ public class Loan
         //
         // Example: 10 days overdue = (7 × Kr 5.00) + (3 × Kr 10.00) = Kr 65.00
         // Example: 20 days overdue = (7 × Kr 5.00) + (7 × Kr 10.00) + (6 × Kr 20.00) = Kr 225.00
-        throw new NotImplementedException();
+
+        if (DateTime.Now < DueDate || IsReturned == true)
+            return 0;
+
+        if (DateTime.Now > ReturnDate)
+            
+
     }
 
     /// <summary>

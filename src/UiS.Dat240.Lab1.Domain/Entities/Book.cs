@@ -22,11 +22,11 @@ public class Book
     {
         // TODO: Validate parameters and initialize properties
         // Initial status should be Available
-        if (string.IsNullOrEmpty(isbn))
+        if (string.IsNullOrWhiteSpace(isbn))
             throw new ArgumentException("ISBN can't be null or empty.");
-        if (string.IsNullOrEmpty(title))
+        if (string.IsNullOrWhiteSpace(title))
             throw new ArgumentException("Title can't be null or empty.");
-        if (string.IsNullOrEmpty(author))
+        if (string.IsNullOrWhiteSpace(author))
             throw new ArgumentException("Author can't be null or empty.");
 
         ISBN = isbn;
@@ -65,8 +65,10 @@ public class Book
         // If ReservedForMemberId is set, status becomes Reserved
         // Otherwise, status becomes Available and ReservedForMemberId is cleared
         if (Status != BookStatus.Reserved)
+            {
             Status = BookStatus.Available;
             ReservedForMemberId = null;
+            }
 
     }
 
@@ -97,7 +99,9 @@ public class Book
         // TODO: Implement cancellation logic
         // Clear ReservedForMemberId
         // If status is Reserved, change to Available
-        throw new NotImplementedException();
+        ReservedForMemberId = null;
+        if (Status == BookStatus.Reserved)
+            Status = BookStatus.Available;
     }
 
     /// <summary>
@@ -121,7 +125,9 @@ public class Book
     {
         // TODO: Implement
         // Can only reserve Borrowed books (not Available or already Reserved)
-        throw new NotImplementedException();
+        if (Status != BookStatus.Borrowed)
+            return false;
+        return true;
     }
 }
 

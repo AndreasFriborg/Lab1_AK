@@ -95,11 +95,12 @@ public class Member
         // 2. Calculate any fines using loan.CalculateFine()
         // 3. If there are fines, add them using AddFine()
         // 4. Remove the loan from _activeLoans
-        loan.Return(DateTime.Now);
+        
         decimal fine = loan.CalculateFine();
         if (fine > 0)
             AddFine(fine);
         _activeLoans.Remove(loan);
+        loan.Return(DateTime.Now);
     }
 
     /// <summary>

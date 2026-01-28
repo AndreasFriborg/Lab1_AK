@@ -22,7 +22,7 @@ public class Loan
     public DateTime? ReturnDate { get; private set; }
 
     public bool IsReturned => ReturnDate.HasValue;
-    public bool IsOverdue => !IsReturned && DateTime.Now > DueDate;
+    public bool IsOverdue => !IsReturned && DateTime.Now.Date > DueDate.Date;
 
     /// <summary>
     /// Creates a new loan.
@@ -36,6 +36,14 @@ public class Loan
         // TODO: Validate and initialize
         // DueDate should be BorrowDate + LoanPeriodDays (14 days)
         // ReturnDate should be null initially
+        if (string.IsNullOrEmpty(loanId))
+            throw new ArgumentException("LoanId must not be null or empty.");
+        if (string.IsNullOrEmpty(memberId))
+            throw new ArgumentException("MemberId must not be null or empty.");
+        if (book == null)
+            throw new ArgumentException("Book must not be null.");
+        
+
         ReturnDate = null;
         
         DueDate = borrowDate.AddDays(LoanPeriodDays);
@@ -66,15 +74,15 @@ public class Loan
         // Example: 10 days overdue = (7 × Kr 5.00) + (3 × Kr 10.00) = Kr 65.00
         // Example: 20 days overdue = (7 × Kr 5.00) + (7 × Kr 10.00) + (6 × Kr 20.00) = Kr 225.00
 
-        if (DateTime.Now < DueDate || IsReturned == true)
+        if (DateTime.Now.Date <= DueDate.Date || IsReturned == true)
             return 0;
 
         if (GetDaysOverdue() <= 7)
-            return GetDaysOverdue() * 5;
+            return GetDaysOverdue() * Tier1DailyRate;
         if (GetDaysOverdue() > 7 && GetDaysOverdue() <= 14)
-            return 7*5 + (GetDaysOverdue()-7) * 10;
+            return 7 * Tier1DailyRate + (GetDaysOverdue() - 7) * Tier2DailyRate;
         if (GetDaysOverdue() > 14)
-            return 7*10 + 7*5 + (GetDaysOverdue()-14) * 20;
+            return 7 * Tier1DailyRate + 7 * Tier2DailyRate + (GetDaysOverdue() - 14) * Tier3DailyRate;
             
         throw new InvalidOperationException("Invalid inputs.");
 
@@ -95,10 +103,11 @@ public class Loan
         if (IsReturned == true)
             throw new InvalidOperationException("Book has already been returned.");
 
-        ReturnDate = returnDate;
-
         if (returnDate < BorrowDate)
-            throw new InvalidOperationException("Date returned must be after date borrowed.");
+                throw new ArgumentException("Date returned must be after date borrowed.");
+
+        ReturnDate = returnDate;
+        Book.Return();
         
     }
 
@@ -113,7 +122,10 @@ public class Loan
         // Return 0 if not overdue or already returned
         // Otherwise return (DateTime.Now - DueDate).Days
 
-        if (DateTime.Now <= ReturnDate)
+        if (IsReturned == true)
+            return 0;
+        if (DateTime.Now.Date <= DueDate.Date)
+
             return 0;
 
         return (DateTime.Now - DueDate).Days;
